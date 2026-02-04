@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - EEE Services</title>
+    <title>Contact - Request a Quote from EEE Services</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' fill='%23FFD700'>⚡</text></svg>">
 </head>
 <body>
     <nav>
-        <div class="logo">EEE Services</div>
+        <div class="logo">⚡ EEE Services</div>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
@@ -22,31 +23,67 @@
     </nav>
 
     <section class="contact-section">
-        <h1>Request a Quote</h1>
-        <p>Fill out the form below and we will get back to you as soon as possible.</p>
+        <h1>Get Your Free Quote Today</h1>
+        <p>Fill out the form below with your project details and we'll get back to you within 24 hours with a professional quote.</p>
 
         <form id="quote-form">
-            <label>Name:<br><input type="text" placeholder="Your Name" required></label><br>
-            <label>Email:<br><input type="email" placeholder="Your Email" required></label><br>
-            <label>Phone:<br><input type="tel" placeholder="Phone Number" required></label><br>
+            <label>Full Name:<br>
+                <input type="text" name="name" placeholder="John Doe" required>
+            </label>
+
+            <label>Email Address:<br>
+                <input type="email" name="email" placeholder="john@example.com" required>
+            </label>
+
+            <label>Phone Number:<br>
+                <input type="tel" name="phone" placeholder="+1 (555) 123-4567" required>
+            </label>
+
             <label>Service Needed:<br>
-                <select required>
-                    <option value="">Select a Service</option>
+                <select name="service" required>
+                    <option value="">-- Select a Service --</option>
                     <option>Wiring & Installation</option>
-                    <option>Electrical Planning</option>
+                    <option>Electrical Planning & Design</option>
                     <option>Solar & Renewable Systems</option>
                     <option>Maintenance & Troubleshooting</option>
+                    <option>Smart Lighting Solutions</option>
+                    <option>Safety & Compliance</option>
+                    <option>Other</option>
                 </select>
-            </label><br>
-            <label>Message:<br><textarea placeholder="Additional details" required></textarea></label><br>
-            <button type="submit">Submit Request</button>
+            </label>
+
+            <label>Project Type:<br>
+                <select name="projectType" required>
+                    <option value="">-- Select Project Type --</option>
+                    <option>Residential</option>
+                    <option>Commercial</option>
+                    <option>Industrial</option>
+                </select>
+            </label>
+
+            <label>Additional Details:<br>
+                <textarea name="message" placeholder="Describe your project, timeline, budget, or any specific requirements..." rows="6" required></textarea>
+            </label>
+
+            <button type="submit">Get Your Free Quote</button>
         </form>
+
+        <div class="contact-info-box">
+            <h3>📞 Other Ways to Reach Us</h3>
+            <p><strong>Phone:</strong> +1 (555) 123-4567</p>
+            <p><strong>Email:</strong> info@eeeservices.com</p>
+            <p><strong>WhatsApp:</strong> +1 (555) 123-4567</p>
+            <p><strong>Address:</strong> 123 Electrical Ave, Tech City, TC 12345</p>
+            <p><strong>Business Hours:</strong> Monday - Friday: 8:00 AM - 6:00 PM | Emergency: 24/7 Available</p>
+        </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 EEE Services. All rights reserved.</p>
+        <p>&copy; 2026 EEE Services. All rights reserved. | Excellence in Every Connection</p>
         <div class="social">
-            <a href="#">LinkedIn</a> | <a href="#">WhatsApp</a> | <a href="#">Email</a>
+            <a href="#" title="LinkedIn">LinkedIn</a> | 
+            <a href="#" title="WhatsApp">WhatsApp</a> | 
+            <a href="mailto:info@eeeservices.com" title="Email">Email</a>
         </div>
     </footer>
 
@@ -56,7 +93,8 @@
         const form = document.getElementById('quote-form');
         form.addEventListener('submit', function(e){
             e.preventDefault();
-            alert('Thank you! Your request has been submitted. We will contact you soon.');
+            const name = form.querySelector('input[name="name"]').value;
+            alert(`Thank you, ${name}! Your quote request has been submitted successfully.\n\nWe will review your project details and contact you within 24 hours.\n\nEEE Services - Excellence in Every Connection`);
             form.reset();
         });
     </script>
